@@ -4,13 +4,13 @@ After=syslog.target network.target
 
 [Service]
 # Change and/or create the required user and group.
-User=vh
-Group=vh
+User=user
+Group=user
 
 Type=simple
 
 # Change the path to Radarr or mono here if it is in a different location for you.
-ExecStart=/usr/bin/mono --debug /home/vh/Radarr/Radarr.exe -nobrowser
+ExecStart=/usr/bin/mono --debug /home/user/media-server-setup/Radarr/Radarr.exe -nobrowser
 TimeoutStopSec=20
 KillMode=process
 Restart=on-failure
