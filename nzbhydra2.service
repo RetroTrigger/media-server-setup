@@ -1,0 +1,23 @@
+[Unit]
+Description=NZBHydra2 Daemon
+Documentation=https://github.com/theotherp/nzbhydra2
+After=network.target
+
+[Service]
+User=user
+Group=user
+Type=simple
+# Set to the folder where you extracted the ZIP
+WorkingDirectory=~/nzbhydra2
+
+
+# NZBHydra stores its data in a "data" subfolder of its installation path
+# To change that set the --datafolder parameter:
+# --datafolder /path-to/datafolder
+ExecStart=/usr/bin/python ~/nzbhydra2/nzbhydra2wrapper.py --nobrowser
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
